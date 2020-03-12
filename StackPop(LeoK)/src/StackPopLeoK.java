@@ -1,3 +1,10 @@
+/*
+ * Created by Leo Kay
+ * Created on: 21-03-2020
+ * Created for: ICS4U
+ * Day #16 (Stack - Pop)
+ * This program creates a stack and pushes numbers on it, and also pops numbers from the stack
+*/
 import javax.swing.JOptionPane;
 
 import org.eclipse.swt.SWT;
