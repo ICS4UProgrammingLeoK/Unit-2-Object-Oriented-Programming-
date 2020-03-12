@@ -1,0 +1,98 @@
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.List;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+
+import javax.swing.JOptionPane;
+import javax.swing.*;
+
+public class StackPushLeoK {
+
+	protected Shell shlStackPush;
+	private Text txt_num;
+	private Stack stackClass;
+
+	/**
+	 * Launch the application.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		try {
+			StackPushLeoK window = new StackPushLeoK();
+			window.open();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Open the window.
+	 */
+	public void open() {
+		Display display = Display.getDefault();
+		createContents();
+		shlStackPush.open();
+		shlStackPush.layout();
+		while (!shlStackPush.isDisposed()) {
+			if (!display.readAndDispatch()) {
+				display.sleep();
+			}
+		}
+	}
+	
+	/**
+	 * Create contents of the window.
+	 */
+	protected void createContents() {
+		shlStackPush = new Shell();
+		shlStackPush.setSize(246, 300);
+		shlStackPush.setText("Stack - Push by Leo Kay");
+		
+		Label lblNewLabel = new Label(shlStackPush, SWT.NONE);
+		lblNewLabel.setBounds(10, 10, 129, 15);
+		lblNewLabel.setText("Please enter an integer:");
+		
+		txt_num = new Text(shlStackPush, SWT.BORDER);
+		txt_num.setBounds(145, 10, 76, 21);
+		
+		List lst_nums = new List(shlStackPush, SWT.BORDER);
+		lst_nums.setBounds(24, 91, 179, 147);
+		
+		stackClass = new Stack();
+		
+		Button btn_add = new Button(shlStackPush, SWT.NONE);
+		btn_add.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				//variables
+				int num;
+				String numString;
+				
+				//try to get the num
+				try {
+					//convert the text in the text box to an int
+					num = Integer.parseInt(txt_num.getText());
+					
+					//Push the number to the stack
+					stackClass.Push(num);
+					
+					//convert the num to a string
+					numString = Integer.toString(num);
+					
+					//display the num
+					lst_nums.add(numString);
+				} catch (Exception e1) {
+					//display a message box
+					JOptionPane.showMessageDialog(null, "Please enter a correct value", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
+		btn_add.setBounds(76, 51, 75, 25);
+		btn_add.setText("Add");
+	}
+}
