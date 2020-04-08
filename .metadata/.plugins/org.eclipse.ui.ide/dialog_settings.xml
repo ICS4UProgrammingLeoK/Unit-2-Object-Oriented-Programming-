@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.wb.rcp.project.wizard"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.jdt.ui.java"/>
 			<item value="org.eclipse.wb"/>
 			<item value="org.eclipse.wb/org.eclipse.wb.rcp"/>
 		</list>
@@ -15,5 +17,9 @@
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
 			<item value="C:\Users\user\Desktop\School\ICS4U\Unit-2-Object-Oriented-Programming-\StackPeepAndClear(LeoK)"/>
 		</list>
+	</section>
+	<section name="ExternalProjectImportWizard">
+	</section>
+	<section name="BasicNewProjectResourceWizard">
 	</section>
 </section>
