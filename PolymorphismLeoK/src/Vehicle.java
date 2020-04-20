@@ -1,8 +1,8 @@
 public class Vehicle {
 	//variables
 	public static String plate;
-    public static String colour;
-    public static int numWheels;
+        public static String colour;
+        public static int numWheels;
 
 	public void info(int carDoors, int carWheels) {
 		// TODO Auto-generated method stub
